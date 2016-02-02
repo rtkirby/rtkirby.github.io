@@ -1,0 +1,43 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.my-head {
+	/* Lavender */
+	background: #d4d7e8;
+	width: 100%;
+}
+
+.my-list {
+	/* blue */
+	background: #d4ecfb;
+	width: 100%;
+}
+
+.my-li {
+	background: #ebf5fc;
+}
+
+.my-search {
+	/* green */
+	background: #d5e9d7;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 100%;
+}
+
+.my-map {
+	/* blue */
+	background: #d4ecfb;
+	height: 600px;
+	width: 100%;
+}
+
+/* Knockout through an error because of a hyphen */
+.hilite {
+	color:blue;
+	background:orange;
+}
