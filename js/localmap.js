@@ -54,7 +54,7 @@ function initMap() {
 	dropMarkers();
 
 	// wait until markers have dropped
-	setTimeout(addListeners, 800);
+	setTimeout(addListener, 800);
 
 }
 
@@ -149,7 +149,7 @@ function listEntriesVisible() {
  *	Add a 'closeclick' listener for each info window
  */
 
-function addListeners() {
+function addListener() {
 
 	for ( var i in mapLocations() ) {
 		mapLocations()[i].marker.addListener('click', (function(j){return function(){activateMarker(j);};})(i));
