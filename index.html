@@ -14,30 +14,24 @@
 </head>
 
 <body>
+<div id="wrapper">
+    <header id="site"> 
+        <h1>Neighborhood Map</h1>
+    </header>
+    <article>  
+       <nav>
+        <div class="col-md-12 col-sm-12 col-xs-12 my-list">Click a street
+			<ul class="nav nav-tabs" data-bind="foreach: mapLocations">
+				<li class="btn my-li" data-bind="visible: visible()">
+					<span data-bind="
+					css: { hilite: select() },
+					text: name,
+					event: { mouseover: $parent.highLightOn, mouseout: $parent.highLightOff, click: $parent.listClick }">
+					</span>
+			    </li>
+			</ul>
+		</div>
 
-<div class="container">
-
-	<div class="row">
-		<div class="col-md-12 col-sm-12 col-xs-12 my-head text-center">
-		<h4>Neighborhood Map</h4>
-		</div><!-- my-head -->
-	</div><!-- row -->
-
-	<div class="row">
-		<div class="col-md-12 col-sm-12 col-xs-12 my-list">
-		Click a street
-		<ul class="nav nav-tabs" data-bind="foreach: mapLocations">
-			<li class="btn my-li" data-bind="visible: visible()">
-			<span data-bind="
-			css: { hilite: select() },
-			text: name,
-			event: { mouseover: $parent.highLightOn, mouseout: $parent.highLightOff, click: $parent.listClick }
-			"></span></li>
-		</ul>
-		</div><!-- my-list -->
-	</div><!-- row -->
-
-	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 my-search">
 			Type a street
 			<input  placeholder="Places I lived "
@@ -47,14 +41,22 @@
 			data-bind="textInput: query"
 			autocomplete="off" >
 		</div><!-- my-search -->
-	</div><!-- row -->
 
+      </nav>
+        <header>
 	<div class="row">
 		<div id="map" class="my-map col-md-12 col-sm-12 col-xs-12">
 		</div><!-- my-map -->
 	</div><!-- row -->
+        </header>
 
-</div><!--container-->
+    </article>
+
+
+    <footer> 
+
+    </footer>
+    </div>
 
 <script src="js/jQuery.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -64,7 +66,7 @@
 <script src="js/viewmodel.js"></script>
 <script src="js/localmap.js"></script>
 
-<!--<script async defer
+<!-- <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5v06GI00VMZ07wHzXYTJdJKOy6HGM07Q&callback=initMap&libraries=places">
 </script> -->
 

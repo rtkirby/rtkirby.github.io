@@ -1,3 +1,113 @@
+/* The wrapper centers the rest of the content */
+div#wrapper {width:90%; margin: 10px auto; position: relative;}
+
+/* add some color to distinguish the three sections of the document: header, the main section and the footer. */
+/* Next, we set explicitly the height of the header to 80 pixels, add some background color and padding. The margin values introduce top and bottom spacing of 10px. In addition all content will be centered with text-align:center. */
+header#site {
+    height:80px;
+    padding:10px;
+    background-color: #d4d7e8;
+    margin:10px 0px;
+    text-align:center;
+}
+/* 	Finally, the  footer. Usually has a small font-size which is set in our example to 0.8 units of the standard size. Again, some background color. The clear:both make sure that the footer actually is displayed below the main article; it explictly tells the browser that no floating elements are allowed on both sides of the footer.*/
+footer {
+    font-size:0.8em;
+    clear:both;}
+
+footer .col {
+    width:30%;
+    margin:1% 1.1%;
+    padding:2px;
+    height:100px;
+    background-color:#F63;
+    float:left;
+}
+
+
+nav {
+    background-color:#d4d7e8;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 110px;
+    width: 29%;
+}
+
+
+nav ul {
+    list-style:none;}
+
+
+nav ul li a {  
+    display: block;  
+    background-color:#CCC;
+    margin-right: 20px;  
+    width: 110px;  
+    line-height:1.5em;  
+    text-align: center;  
+    text-decoration: none;  
+    color: #000;  
+}  
+
+nav ul li a:hover {  
+        color: #fff;  
+        background-color:#39C;
+}  
+
+/*The actual trick of aligning both the main article and the navigation horizontally on the same line is done with float:left; while making sure that both fill the full available width. Note that although the sum of the article + nav layer adds up to 100%, the padding introduced for the body actually reduces the overall width to 90% of the browser window.*/
+
+/*The CSS for the article tag. Here we have to make sure that we leave some space for the advertising, so we set its width to 80%. In addition, in order to prevent that the ads are being pushed below the main article, we set  float:left.*/
+
+article {
+    background-color:#d4d7e8;
+    float:right;
+    width:69%;
+    margin-right:10px;
+}
+
+article header {
+    background-color:#d4d7e8;
+    padding:15px;
+}
+
+section#abstract {
+    font-size:1.09em;
+    font-style:italic;
+    margin:10px 0px;
+    text-align:justify;
+    padding:5px 80px;
+}
+
+section#main {
+    font-size:1em;
+    padding:20px;
+    text-align:justify;
+}
+/*
+section#main{
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: inline;     
+}
+*/
+/* On the right border we place the ads. This is done with the aside tag indicating only remotely related content to the actual article. Each ad has a specific height and width. The overall width together with the main article adds up to 98% (80% + 18%). This is necessary because we have to take into account the 10px margin-right of the article. float:left makes sure the ads are really on the same height as the main article (not below). */
+.ads {
+    height:100%;
+    width:30%;
+    background-color:#d4d7e8;
+    margin-bottom:0px;
+    float:left; 
+    }
+
+.ads p:first-child {
+    padding:15px; 
+    font-size:2em;}
+
+.ads p:last-child {
+    padding-left:15px; 
+    font-size:1em;color:#d4d7e8;}
 html,
 body {
 	height: 100%;
