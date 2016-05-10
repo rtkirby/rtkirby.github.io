@@ -1,153 +1,65 @@
-/* The wrapper centers the rest of the content */
-div#wrapper {width:90%; margin: 10px auto; position: relative;}
-
-/* add some color to distinguish the three sections of the document: header, the main section and the footer. */
-/* Next, we set explicitly the height of the header to 80 pixels, add some background color and padding. The margin values introduce top and bottom spacing of 10px. In addition all content will be centered with text-align:center. */
-header#site {
-    height:80px;
-    padding:10px;
-    background-color: #d4d7e8;
-    margin:10px 0px;
-    text-align:center;
-}
-/* 	Finally, the  footer. Usually has a small font-size which is set in our example to 0.8 units of the standard size. Again, some background color. The clear:both make sure that the footer actually is displayed below the main article; it explictly tells the browser that no floating elements are allowed on both sides of the footer.*/
-footer {
-    font-size:0.8em;
-    clear:both;}
-
-footer .col {
-    width:30%;
-    margin:1% 1.1%;
-    padding:2px;
-    height:100px;
-    background-color:#F63;
-    float:left;
+/* Remove padding and margin */
+*
+    {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
 }
 
-
-nav {
-    background-color:#d4d7e8;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: 110px;
-    width: 29%;
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-around;
 }
 
-
-nav ul {
-    list-style:none;}
-
-
-nav ul li a {  
-    display: block;  
-    background-color:#CCC;
-    margin-right: 20px;  
-    width: 110px;  
-    line-height:1.5em;  
-    text-align: center;  
-    text-decoration: none;  
-    color: #000;  
-}  
-
-nav ul li a:hover {  
-        color: #fff;  
-        background-color:#39C;
-}  
-
-/*The actual trick of aligning both the main article and the navigation horizontally on the same line is done with float:left; while making sure that both fill the full available width. Note that although the sum of the article + nav layer adds up to 100%, the padding introduced for the body actually reduces the overall width to 90% of the browser window.*/
-
-/*The CSS for the article tag. Here we have to make sure that we leave some space for the advertising, so we set its width to 80%. In addition, in order to prevent that the ads are being pushed below the main article, we set  float:left.*/
-
-article {
-    background-color:#d4d7e8;
-    float:right;
-    width:69%;
-    margin-right:10px;
+.header {
+	order: 1;
+	height: 100px;
+	flex: 0 1 100%;
+	background: #ccff99;
+	border-radius: 7px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #66cc00;
+	min-width: 184px;
 }
 
-article header {
-    background-color:#d4d7e8;
-    padding:15px;
-}
-
-section#abstract {
-    font-size:1.09em;
-    font-style:italic;
-    margin:10px 0px;
-    text-align:justify;
-    padding:5px 80px;
-}
-
-section#main {
-    font-size:1em;
-    padding:20px;
-    text-align:justify;
-}
-/*
-section#main{
-  float: left;
-  margin: 0;
-  padding: 0;
-  display: inline;     
-}
-*/
-/* On the right border we place the ads. This is done with the aside tag indicating only remotely related content to the actual article. Each ad has a specific height and width. The overall width together with the main article adds up to 98% (80% + 18%). This is necessary because we have to take into account the 10px margin-right of the article. float:left makes sure the ads are really on the same height as the main article (not below). */
-.ads {
-    height:100%;
-    width:30%;
-    background-color:#d4d7e8;
-    margin-bottom:0px;
-    float:left; 
-    }
-
-.ads p:first-child {
-    padding:15px; 
-    font-size:2em;}
-
-.ads p:last-child {
-    padding-left:15px; 
-    font-size:1em;color:#d4d7e8;}
-html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.my-head {
-	/* Lavender */
-	background: #d4d7e8;
-	width: 100%;
-}
-
-.my-list {
-	/* blue */
-	background: #d4ecfb;
-	width: 100%;
-}
-
-.my-li {
-	background: #ebf5fc;
-}
-
-.my-search {
-	/* green */
-	background: #d5e9d7;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	width: 100%;
+.menubox {
+	order: 2;
+	flex: 0 1 180px;
+	max-height: 264px;
+	/* min-height: 223px; */
+	background: #99ffff;
+	border-radius: 7px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #00cccc;
 }
 
 .my-map {
-	/* blue */
-	background: #d4ecfb;
-	height: 600px;
-	width: 100%;
+	order: 3;
+	min-height: 520px;
+	flex: 1 70%;
+	background: #adebad;
+	border-radius: 7px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #28a428;
+	min-width: 184px;
+	max-width: 99%;
 }
 
-/* Knockout through an error because of a hyphen */
+map {
+	order: 3;
+	min-height: 520px;
+	flex: 1 70%;
+	background: #ffffff;
+	min-width: 184px;
+	max-width: 99%;
+}
+
 .hilite {
-	color:blue;
-	background:orange;
+	color: blue;
+	background: orange;
 }

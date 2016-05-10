@@ -1,36 +1,20 @@
-/*
- * This must be the View Model
- */
-
 function AppViewModel() {
-
+	'use strict';
 	var self = this;
 	var regex = new RegExp();
-	var openInfo = null;
-//	var numLocs = mapLocations().length;
-
 	this.mapError = ko.observable();
 
 	if ( myMap === null ) {
-		this.mapError('<h5>Google Map failed to load, proceed at your own risk</h5>');
-	}
+		this.mapError('<h5>Failed to retrieve map</h5>');
+}
 
 	self.query = ko.observable('');
-
-	// the function associated with the search box
 	self.search = function(value) {
-
 		var loopcount = mapLocations().length;
 		var visbits = loopcount;
 		var maxbits = loopcount;
-
 		closeInfos();
-
-		// create a regex with the value in the search box
 		regex.compile(value, 'i');
-
-		// check each name in mapLocations for a match
-		// visbits is used to identify the single match from the search box
 		for (  var i in mapLocations() ) {
 			var marker = mapLocations()[i].marker;
 			if ( regex.test(mapLocations()[i].name) ) {
@@ -47,26 +31,16 @@ function AppViewModel() {
 
 		var bitcount = countbits(visbits, maxbits);
 		if ( bitcount === 1) {
-//			console.log(self.query());
-//			self.query('');
 			i = findbit(visbits, maxbits);
-//			mapLocations()[i].marker.setAnimation(google.maps.Animation.BOUNCE);
 			mapLocations()[i].info.open(myMap, mapLocations()[i].marker);
-			// console.log('found bit: ' + i);
-			// console.log(mapLocations()[i].name);
 		}
-		// console.log('bitcount: ' + bitcount + ' visbits: ' + visbits.toString(8));
 	};
 
 	self.query.subscribe(self.search);
-
 	this.clearQuery = function() {
 		self.query('');
-		
 	};
 
-	// the user clicked the street name <li>
-	// close any open info windows, turn off bounce, open info window
 	this.listClick = function(data) {
 		var dm = data.marker;
 		closeInfos();
@@ -84,7 +58,6 @@ function AppViewModel() {
 		data.select(false);
 	};
 
-	// return the number of bits set in bits
 	function countbits(bits, maxbits) {
 		var bitcount = 0;
 		for ( var i = 0; i < maxbits; i++ ) {
@@ -108,7 +81,4 @@ function AppViewModel() {
 			mapLocations()[i].info.close();
 		}
 	}
-
 }
-
-//ko.applyBindings(new AppViewModel());

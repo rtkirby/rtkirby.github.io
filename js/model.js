@@ -1,27 +1,23 @@
-/*
- *	array that contains the data for markers and info boxes
- */
-
 var myLocations = [
-	{ name: 'Colorado Springs',
+	{ name: 'Colorado Springs 1st',
 	addr: '4729 Rincon Place, colorado Springs, CO 80918',
-	date: 'current',
-	grade: 'Nanodegree',
-	school: 'Udacity',
-	interest: 'Front-End Web Developer',
+	date: '2009 - 2010',
+	grade: '',
+	school: 'Pikes Peak CC',
+	interest: 'Motorcycles',
 	wikiData: null
 	},
-	{ name: 'Eagle',
-	addr: '0043 tanager circle, Eagle, CO 81631',
-	date: '2013 - 2015',
+	{ name: 'Eagle 1st',
+	addr: '0301 tanager circle, Eagle, CO 81631',
+	date: '2011 - 2012',
 	grade: '',
 	school: 'ECCA',
 	interest: 'Virtual Server',
 	wikiData: null
 	},
-	{ name: 'Eagle first',
-	addr: '301 tanager circle, Eagle, CO 81631',
-	date: '2011 - 2013',
+	{ name: 'Eagle 2nd',
+	addr: '0043 tanager circle, Eagle, CO 81631',
+	date: '2012 - 2013',
 	grade: '',
 	school: 'ECCA',
 	interest: 'Server Administration',
@@ -35,19 +31,15 @@ var myLocations = [
 	interest: 'Firewalls',
 	wikiData: null
 	},
-	{ name: 'Colorado Springs first',
+	{ name: 'Colorado Springs 2nd',
 	addr: '4729 Rincon Place, colorado Springs, CO 80918',
-	date: '2009 - 2010',
+	date: '2014 - 2016',
 	grade: '',
-	school: 'Pikes Peak CC',
-	interest: 'Motorcycles',
+	school: 'Udacity',
+	interest: 'Front-End Web Development',
 	wikiData: null
 	}
 ];
-
-/*
- *	Define an object to facilitate KnockoutJS functionality
- */
 
 function MapMarker(locInfo) {
 	var self = this;
@@ -55,11 +47,9 @@ function MapMarker(locInfo) {
 	self.addr = locInfo.addr;
 	self.marker = null;
 	self.info = null;
-	self.select = ko.observable(false);	// used to highlight <li> on mouseover
-	self.visible = ko.observable(true);	// used for visibility of <li>
+	self.select = ko.observable(false);
+	self.visible = ko.observable(true);
 }
-
 var myMap = null;
 var myGeocoder;
 var myViewModel;
-
